@@ -93,3 +93,24 @@ $column-gap: 2rem;
     }
   }
 }
+
+// Device breakpoint only
+@mixin device-only($name, $breakpoints: $grid-breakpoints) {
+  $min: device-min($name, $breakpoints);
+  $max: device-max($name, $breakpoints);
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+  @else if $max == null {
+    @include device-up($name, $breakpoints) {
+      @content;
+    }
+  }
+  @else if $min == null {
+    @include device-down($name, $breakpoints) {
+      @content;
+    }
+  }
+}
