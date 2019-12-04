@@ -137,3 +137,130 @@ $column-gap: 2rem;
   margin-left: ($column-gap / -2);
 }
 
+// Build Columns Mixin
+@mixin build-columns($columns: $columns, $gap: $column-gap, $breakpoints: $grid-breakpoints) {
+
+  // Set Defaults
+
+  %defaults {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: ($gap / 2);
+    padding-left: ($gap / 2);
+  }
+
+  // Loop Breakpoints
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $min: device-min($breakpoint, $breakpoints);
+    $label: if($min, $breakpoint, 'all');
+
+    // Extend Defaults
+    .#{$label},
+    .#{$label}-auto {
+      @extend %defaults;
+    }
+
+    @for $i from 1 through $columns {
+      .#{$label}-#{$i} {
+        @extend %defaults;
+      }
+    }
+
+    // Set responsive properties
+
+    .#{$label} {
+      @include device-up($breakpoint, $breakpoints) {
+        &--float {
+          &-left {
+            float: left !important;
+          }
+
+          &-right {
+            float: right !important;
+          }
+
+          &-none {
+            float: none !important;
+          }
+        }
+
+        &--display {
+          &-none {
+            display: none !important;
+          }
+
+          &-block {
+            display: block !important;
+          }
+
+          &-inline {
+            display: inline !important;
+
+            &-block {
+              display: inline-block !important;
+            }
+
+            &-flex {
+              display: inline-flex !important;
+            }
+          }
+
+          &-table {
+            display: table !important;
+
+            &-row {
+              display: table-row !important;
+            }
+
+            &-cell {
+              display: table-cell !important;
+            }
+          }
+
+          &-flex {
+            display: flex !important;
+          }
+        }
+
+        &--text {
+          &-left {
+            text-align: left !important;
+          }
+
+          &-right {
+            text-align: right !important;
+          }
+
+          &-center {
+            text-align: center !important;
+          }
+        }
+      }
+    }
+
+    // Calculate grid sizes
+
+    @include device-up($breakpoint, $breakpoints) {
+      @for $i from 1 through $columns {
+        #{$label}-#{$i} {
+          flex: 0 0 calc(100% * #{$i} / #{$columns});
+          max-width: calc(100% * #{$i} / #{$columns});
+
+          // Calculate Offset
+
+        @if not ($label == "all" and $i == 0) {
+            &--offset {
+              $num: $i / $columns;
+
+              margin-left: if($num == 0, 0, calc(100% * #{$i} / #{$columns}));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include build-columns();
