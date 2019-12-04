@@ -7,3 +7,12 @@ $container-widths: (
   tablet--large: 960px,
   desktop: 1160px,
 );
+
+$grid-breakpoints: (
+  reset: 0,
+  mobile: 424px,
+  mobile--large: 544px,
+  tablet: 784px,
+  tablet--large: 1024px,
+  desktop: 1200px,
+);
