@@ -1,5 +1,7 @@
 @import '/reset';
 
+// Conatiner Widths
+
 $container-widths: (
   mobile: 360px,
   mobile--large: 480px,
@@ -7,6 +9,8 @@ $container-widths: (
   tablet--large: 960px,
   desktop: 1160px,
 );
+
+// Break Points
 
 $grid-breakpoints: (
   reset: 0,
@@ -16,3 +20,29 @@ $grid-breakpoints: (
   tablet--large: 1024px,
   desktop: 1200px,
 );
+
+// Column Size
+
+$columns: 12;
+$column-gap: 2rem;
+
+// Minimum Device Break Point
+
+@function device-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if(0 != $min, $min, null);
+}
+
+// Maximum device breakpoint width. Largest breakpoint will be a null value
+
+@function device-max($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $next: if(
+    index($breakpoint-names, $name) < length($breakpoint-names),
+    nth(
+      $breakpoint-names,
+      index($breakpoint-names, $name) + 1
+    ),
+    null
+  );
+@return if($next, device-min($next, $breakpoints) - 0.02px, null);
+}
