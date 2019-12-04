@@ -1,2 +1,9 @@
 @import '/reset';
 
+$container-widths: (
+  mobile: 360px,
+  mobile--large: 480px,
+  tablet: 720px,
+  tablet--large: 960px,
+  desktop: 1160px,
+);
