@@ -33,7 +33,7 @@ $column-gap: 2rem;
   @return if(0 != $min, $min, null);
 }
 
-// Maximum device breakpoint width. Largest breakpoint will be a null value
+// Maximum Device Break Point
 
 @function device-max($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
   $next: if(
@@ -45,4 +45,17 @@ $column-gap: 2rem;
     null
   );
 @return if($next, device-min($next, $breakpoints) - 0.02px, null);
+}
+
+// Device breakpoint up. If the breakpoint is the smallest it will return without media query.
+@mixin device-up($name, $breakpoints: $grid-breakpoints) {
+  $min: device-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
 }
