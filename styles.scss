@@ -59,3 +59,16 @@ $column-gap: 2rem;
     @content;
   }
 }
+
+// Device breakpoint down. If the breakpoint is the largest it will return without media query.
+@mixin device-down($name, $breakpoints: $grid-breakpoints) {
+  $max: device-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
