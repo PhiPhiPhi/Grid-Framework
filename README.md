@@ -23,7 +23,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This is our sixth collaboration project. We have made a clone copy of The Next Web responsive website ! It includes
+This is our sixth collaboration project. We building a grid-based framework! and apply it by cloning commercecream.com.
+It includes:
 
 - our own grid framework
 - scss
