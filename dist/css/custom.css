@@ -6,11 +6,25 @@
 }
 
 @font-face {
-  font-family: "DM Sans";
+  font-family: "DM Sans Bold";
   src: url("../../fonts/rP2Cp2ywxg089UriASitCBimC3YU-Ck.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
 }
+@font-face {
+  font-family: "DM Sans";
+  src: url("../../fonts/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("../../fonts/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0vrx52g.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+
 
 body {
   overflow: hidden;
@@ -18,8 +32,22 @@ body {
   position: relative;
   background-color: #FFEFEF;
   color: #43455E;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
+h3 {
+  display: block;
+  color: #43455E;
+  font-family: "DM Serif Display", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+
+}
 
 
 .nav-center-wrapper a{
@@ -49,7 +77,7 @@ body {
   justify-content: space-between;
   color: #43455E;
   font-size: 16px;
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-family: "DM Sans Bold", Helvetica, Arial, sans-serif;
   font-weight: 700;
 
  
@@ -95,6 +123,86 @@ a {
   content: "\E911";
 }
 
+.hero_content h3 {
+  font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.hero_content p {
+  max-width: 375px;
+  margin: 0 auto 20px auto;
+}
+
+.btn {
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: 40px;
+  background-color: #FF686B;
+  padding: 13px 50px 11px 50px;
+  color: #fff;
+  border: none;
+}
+
+a, button, .btn {
+-moz-transition: all 0.2s ease-in;
+-o-transition: all 0.2s ease-in;
+-webkit-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+}
+
+.hero_content .btn {
+-webkit-box-shadow: 0px 28px 32px 0px rgba(12, 0, 51, 0.1);
+-moz-box-shadow: 0px 28px 32px 0px rgba(12, 0, 51, 0.1);
+box-shadow: 0px 28px 32px 0px rgba(12, 0, 51, 0.1);
+position: relative;
+width: 193px;
+background-color: #43455E;
+padding: 7px 10px;
+font-size: 14px;
+display: block;
+margin: 0 auto 15px auto;
+}
+
+.hero_content .btn .icon {
+  position: absolute;
+  left: -5px;
+  top: 8px;
+  font-size: 19.5px;
+}
+
+.hero_content .btn span {
+  margin-left: 20px;
+}
+
+.icon-shopify-bag .path1:before {
+  content: "\E914";
+  color: white;
+  font-family: 'icons';
+}
+
+.icon-shopify-bag .path2:before {
+  content: "\E915";
+  margin-left: -1em;
+  color: #96bf48;
+  font-family: 'icons';
+}
+
+.hero_content .btn .icon span {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 750px) {
+.hero_content h3 {
+    font-size: 46px;
+}
+.hero_content .btn {
+  display: inline-block;
+}
+.hero_content {
+  padding-top: 80px;
+}
+}
 @media only screen and (max-width: 749px) {
   .small-hide {
       display: none !important;
@@ -105,4 +213,7 @@ a {
   .header .icon-logo {
       font-size: 18px;
   }
+  .btn {
+    padding: 13px 80px 11px 80px;
+}
   }
