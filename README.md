@@ -59,4 +59,4 @@ Project Link: [https://github.com/PhiPhiPhi/Grid-Framework](https://github.com/P
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: assets/img/screenshot.png
+[product-screenshot]: img/screenshot.png
