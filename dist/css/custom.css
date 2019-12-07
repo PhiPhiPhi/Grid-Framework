@@ -1,20 +1,108 @@
-#cus-div {
-  background-color: aqua;
-  border: 1px solid black;
-  width: 100%;
+@font-face {
+  font-family: "icons";
+  src: url("../../fonts/icons.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
 }
 
-#cus-div2 {
-  background-color: burlywood;
-  border: 1px solid black;
-  width: 100%;
-  height: 100px;
+@font-face {
+  font-family: "DM Sans";
+  src: url("../../fonts/rP2Cp2ywxg089UriASitCBimC3YU-Ck.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
 }
 
-#im {
-  background-color: chartreuse;
-  border: 1px solid red;
-  margin: 0 auto;
-  width: 50%;
-  height: 50vh;
+body {
+  overflow: hidden;
+  height: auto;
+  position: relative;
+  background-color: #FFEFEF;
+  color: #43455E;
 }
+
+
+
+.nav-center-wrapper a{
+  justify-content: center !important;
+}
+
+.nav-right-wrapper a{
+  justify-content: flex-end !important;
+}
+
+.nav-left-wrapper a{
+  justify-content: flex-start !important;
+}
+
+.submit-group .icon {
+  vertical-align: middle;
+  font-size: 19px;
+  margin: 0 12px 0 0;
+}
+
+.icon-submit:before {
+  content: "\E910";
+}
+
+.header_link {
+  display: flex;
+  justify-content: space-between;
+  color: #43455E;
+  font-size: 16px;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+
+ 
+  height: 30px;
+ 
+
+}
+.icon-logo:before {
+  color: #FF686B;
+  content: "\E916";
+}
+
+
+.header_link span {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-perspective: 1000;
+}
+
+.icon-logo {
+  font-size: 18px;
+}
+
+a {
+  color: #FF686B;
+}
+.icon-account:before {
+  content: "\E911";
+}
+
+@media only screen and (max-width: 749px) {
+  .small-hide {
+      display: none !important;
+  }
+  }
+  
+  @media screen and (min-width: 370px) {
+  .header .icon-logo {
+      font-size: 18px;
+  }
+  }
