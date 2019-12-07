@@ -163,7 +163,12 @@ body {
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
+  background-image: url('../../img/bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
+
+
 
 h3 {
   display: block;
